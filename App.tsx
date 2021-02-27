@@ -1,18 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import {
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_600SemiBold,
+} from '@expo-google-fonts/inter';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import { Rajdhani_600SemiBold } from '@expo-google-fonts/rajdhani';
+
+import { Home } from './src/screens/Home';
 
 export default function App(): JSX.Element {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
+  const [fontsLoaded] = useFonts({
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_600SemiBold,
+    Rajdhani_600SemiBold,
+  });
+
+  return <Home />;
 }
